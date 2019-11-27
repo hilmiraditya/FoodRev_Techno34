@@ -107,12 +107,14 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <a>Food-Rev</a>
+                                <a>
+                                    <img style="width:100px;" src="{{ url('logo.png') }}">
+                                </a>
                             </td>
                             
                             <td>
-                                Restoran : <br>
-                                <b>Ikan Bakar Keputih</b>
+                                Kode Booking : <br>
+                                <b>{{ $data['kodebooking'] }}</b>
                             </td>
                         </tr>
                     </table>
@@ -138,12 +140,6 @@
                                 {{ $data['tanggal_pemesanan'] }}
                                 </b>
                                 <br>
-                                Jam Makanan Diambil : 
-                                <br>
-                                <b>
-                                {{ $data['jam_makanan_diambil'] }}
-                                </b>
-                                <br>
                                 Pembayaran :
                                 <br>
                                 <b>
@@ -157,11 +153,11 @@
             
             <tr class="heading">
                 <td>
-                    Menu
+                    Nama Event
                 </td>
                 
                 <td>
-                    Harga
+                    Harga Tiket
                 </td>
             </tr>
             

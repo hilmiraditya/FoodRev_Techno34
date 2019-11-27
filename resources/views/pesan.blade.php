@@ -13,12 +13,14 @@
                 </div>
                 <div class="card-body" style="padding-bottom:25px;">
                     <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS2v4_fIAZ4n28cHA5--1u4xCMkW4TNba6FU26g91IgtrXzZmvr" style="height:200px;width:200px;">
+                      <img src="{{ url($pesanan->foto) }}" style="width:200px;height:200px;">
                     </div>
                     <br>
                     <div class="badge badge-pill badge-success">{{ $pesanan->kategori }}</div>
                     <br>
                     <b>{{ "Rp " . number_format($pesanan->harga,2,',','.') }}</b>
+                    <br>
+                    <b>{{ $pesanan->tanggal }}</b>
                     <br>
                     <br>
                     <button class="btn btn-xs btn-success" onclick="tambahItem({{$pesanan->id}})">
@@ -49,9 +51,10 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS2v4_fIAZ4n28cHA5--1u4xCMkW4TNba6FU26g91IgtrXzZmvr" style="height:100%;width:100%;">
+                      <img src="{{ url($pesanan->foto) }}" style="width:100%;">
                     </div>
                     <div class="col-md-8">
+                        <span class="badge badge-pill badge-primary">{{ $pesanan->jurusan }}</span>
                         <div class="badge badge-pill badge-success">{{ $pesanan->kategori }}</div>
                         <h3>{{ $pesanan->nama }}</h3>
                         <h5>{{ "Rp " . number_format($pesanan->harga,2,',','.') }}</h5>

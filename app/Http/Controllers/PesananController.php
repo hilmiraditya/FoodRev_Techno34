@@ -145,6 +145,11 @@ class PesananController extends Controller
                         ->where('id', $gt->menu_id)
                         ->first()
                         ->nama;
+
+            $gt->tanggal = DB::table('menu')
+                        ->where('id', $gt->menu_id)
+                        ->first()
+                        ->tanggal;
             $total = $total + $gt->harga_total;
         }
 
@@ -158,6 +163,7 @@ class PesananController extends Controller
 
     public function checkoutSubmit(Request $request)
     {
+        $kode = uniqid();
         $getCookies = Cookie::get('user_token_keranjang');
         
         $getTokenID = DB::table('token')
@@ -168,7 +174,7 @@ class PesananController extends Controller
         DB::table('checkout')->insert([
             'nama' => $request->nama,
             'email' => $request->email,
-            'jam_makanan_diambil' => $request->jam_makanan_diambil,
+            'kodebooking' => $kode,
             'nomor_handphone' => $request->nomor_handphone,
             'pembayaran' => $request->pembayaran
         ]);
@@ -208,7 +214,7 @@ class PesananController extends Controller
         $data = array(
             'nama' => $request->nama,
             'email' => $request->email,
-            'jam_makanan_diambil' => $request->jam_makanan_diambil,
+            'kodebooking' => $kode,
             'nomor_handphone' => $request->nomor_handphone,
             'pembayaran' => $request->pembayaran,
             'pesanan' => $getKeranjang,
@@ -220,7 +226,7 @@ class PesananController extends Controller
         {
             $message->to($data['email'], $data['nama']);
             $message->subject('Invoice Pemesanan');
-            $message->from('raditya113@gmail.com', 'Admin Food-Rev');
+            $message->from('raditya113@gmail.com', 'Admin Event ITS');
         });
 
         return redirect('/checkout/success');

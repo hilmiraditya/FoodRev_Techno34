@@ -2,8 +2,8 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">Nama Menu</th>
-            <th scope="col">Jumlah</th>
+            <th scope="col">Nama Event</th>
+            <th scope="col">Jumlah Tiket</th>
             <th scope="col">Harga</th>
             <th scope="col">Pilihan</th>
         </tr>
