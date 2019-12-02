@@ -1,6 +1,11 @@
 @extends('layouts.app')  
 
 @section('content')
+@if (session('alert'))
+    <div class="alert alert-success">
+        {{ session('alert') }}
+    </div>
+@endif
 <div class="container">
         <div class="row">
             @foreach($data['menu'] as $menu)
@@ -22,6 +27,9 @@
                             <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#menu{{ $menu->id }}">
                                 Detil
                             </button>
+                             <a class="btn btn-xs btn-danger" href="delete/{{$menu->id}}">
+                                Hapus
+                            </a>
                         </div>
                     </div>
                 </span>

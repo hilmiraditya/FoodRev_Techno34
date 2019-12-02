@@ -35,6 +35,9 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
+                                <a class="nav-link" href="{{url('/tambah-menu')}}">Tambah Menu</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{url('/list-menu')}}">List Menu</a>
                             </li>  
                             <li class="nav-item">

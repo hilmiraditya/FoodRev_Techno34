@@ -37,8 +37,9 @@ Route::get('/checkout', 'PesananController@checkout');
 Route::post('/checkout/submit', 'PesananController@checkoutSubmit');
 Route::get('/list-menu', 'AdminController@lihat_list_menu');
 Route::get('/pesanan', 'AdminController@lihat_pesanan');
-
-
+Route::get('/tambah-menu', 'AdminController@tambah_menu');
+Route::post('create-menu', 'AdminController@create');
+Route::get('/delete/{id}', 'AdminController@delete');
 
 // Auth::routes();
 
