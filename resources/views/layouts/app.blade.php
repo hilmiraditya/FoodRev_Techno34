@@ -38,7 +38,7 @@
                                 <a class="nav-link" href="{{url('/list-menu')}}">List Menu</a>
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Pesanan</a>
+                                <a class="nav-link" href="{{url('/pesanan')}}">Pesanan</a>
                             </li>  
                         </ul>
                     @endif

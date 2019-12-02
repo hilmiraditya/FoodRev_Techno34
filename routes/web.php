@@ -36,6 +36,7 @@ Route::get('/pesan/keranjang/hapus/{id}', 'PesananController@hapusKeranjang');
 Route::get('/checkout', 'PesananController@checkout');
 Route::post('/checkout/submit', 'PesananController@checkoutSubmit');
 Route::get('/list-menu', 'AdminController@lihat_list_menu');
+Route::get('/pesanan', 'AdminController@lihat_pesanan');
 
 
 
